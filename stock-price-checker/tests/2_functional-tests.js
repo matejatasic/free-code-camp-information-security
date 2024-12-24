@@ -10,7 +10,7 @@ const API_ENDPOINT = "/api/stock-prices"
 
 suite("Functional Tests", function () {
     suite("Fetching one stock", () => {
-        test(`Test ${API_ENDPOINT} fetches data for valid stock`, (done) => {
+        test(`${API_ENDPOINT} fetches data for valid stock`, (done) => {
             const body = {
                 stock: "GOOG"
             }
@@ -35,7 +35,7 @@ suite("Functional Tests", function () {
                 });
         });
 
-        test(`Test ${API_ENDPOINT} fetches data for valid stock`, (done) => {
+        test(`${API_ENDPOINT} fetches data for valid stock`, (done) => {
             const body = {
                 stock: "GOOG",
                 like: true
@@ -68,7 +68,7 @@ suite("Functional Tests", function () {
 
         });
 
-        test(`Test ${API_ENDPOINT} fetches data for valid stock and likes it`, (done) => {
+        test(`${API_ENDPOINT} fetches data for valid stock and likes it`, (done) => {
             const body = {
                 stock: "GOOG",
                 like: true
@@ -97,7 +97,7 @@ suite("Functional Tests", function () {
     });
 
     suite("Fetching two stocks", () => {
-        test(`Test ${API_ENDPOINT} fetches data for two valid stocks`, (done) => {
+        test(`${API_ENDPOINT} fetches data for two valid stocks`, (done) => {
             const body = {
                 stock: ["GOOG", "MSFT", "NASDAQ"]
             }
@@ -133,7 +133,7 @@ suite("Functional Tests", function () {
                 })
         });
 
-        test(`Test ${API_ENDPOINT} fetches data for two valid stocks and likes them`, (done) => {
+        test(`${API_ENDPOINT} fetches data for two valid stocks and likes them`, (done) => {
             const body = {
                 stock: ["GOOG", "MSFT", "NASDAQ"],
                 like: true
