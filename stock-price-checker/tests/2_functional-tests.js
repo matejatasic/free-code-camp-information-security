@@ -2,7 +2,7 @@ const chaiHttp = require("chai-http");
 const chai = require("chai");
 const assert = chai.assert;
 const server = require("../server");
-const { Stock, StockLike } = require("../models.js");
+const { StockLike } = require("../models.js");
 
 chai.use(chaiHttp);
 
@@ -11,7 +11,7 @@ const API_ENDPOINT = "/api/stock-prices"
 suite("Functional Tests", function () {
     suite("Fetching one stock", () => {
         test(`${API_ENDPOINT} fetches data for valid stock`, (done) => {
-            const body = {
+            const query = {
                 stock: "GOOG"
             }
 
@@ -36,7 +36,7 @@ suite("Functional Tests", function () {
         });
 
         test(`${API_ENDPOINT} fetches data for valid stock`, (done) => {
-            const body = {
+            const query = {
                 stock: "GOOG",
                 like: true
             }
@@ -69,7 +69,7 @@ suite("Functional Tests", function () {
         });
 
         test(`${API_ENDPOINT} fetches data for valid stock and likes it`, (done) => {
-            const body = {
+            const query = {
                 stock: "GOOG",
                 like: true
             }
@@ -98,7 +98,7 @@ suite("Functional Tests", function () {
 
     suite("Fetching two stocks", () => {
         test(`${API_ENDPOINT} fetches data for two valid stocks`, (done) => {
-            const body = {
+            const query = {
                 stock: ["GOOG", "MSFT", "NASDAQ"]
             }
 
@@ -134,7 +134,7 @@ suite("Functional Tests", function () {
         });
 
         test(`${API_ENDPOINT} fetches data for two valid stocks and likes them`, (done) => {
-            const body = {
+            const query = {
                 stock: ["GOOG", "MSFT", "NASDAQ"],
                 like: true
             }
